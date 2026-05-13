@@ -1,7 +1,9 @@
 #!/bin/bash
-CLANG_VERSION=9.0.0
-CLANG_DIR=clang+llvm-$CLANG_VERSION-x86_64-linux-gnu-ubuntu-16.04
-curl https://releases.llvm.org/$CLANG_VERSION/$CLANG_DIR.tar.xz | tar xfJ -
+CLANG_VERSION=17.0.4
+UBUNTU_VERSION=22.04
+CLANG_DIR=clang+llvm-$CLANG_VERSION-x86_64-linux-gnu-ubuntu-$UBUNTU_VERSION
+wget https://github.com/llvm/llvm-project/releases/download/llvmorg-${CLANG_VERSION}/${CLANG_DIR}.tar.xz
+sudo tar -xf ${CLANG_DIR}.tar.xz
 sudo rm -rf /usr/local/bin/clang* /usr/local/lib/clang
 sudo cp -rf  $CLANG_DIR/bin/*  /usr/local/bin
 sudo cp -rf  $CLANG_DIR/lib/clang  /usr/local/lib

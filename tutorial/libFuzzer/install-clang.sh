@@ -4,8 +4,7 @@ UBUNTU_VERSION=22.04
 CLANG_DIR=clang+llvm-$CLANG_VERSION-x86_64-linux-gnu-ubuntu-$UBUNTU_VERSION
 CLANG_TAR=${CLANG_DIR}.tar.xz
 
-wget https://github.com/llvm/llvm-project/releases/download/llvmorg-${CLANG_VERSION}/
-$CLANG_TAR
+wget https://github.com/llvm/llvm-project/releases/download/llvmorg-${CLANG_VERSION}/$CLANG_TAR
 tar -xf $CLANG_TAR
 rm $CLANG_TAR
 sudo rm -rf /usr/local/bin/clang* /usr/local/lib/clang
